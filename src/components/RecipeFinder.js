@@ -1,10 +1,9 @@
 import './RecipeFinder.css';
-import SearchBar from './SearchBar';
 
 const RecipeFinder = () => {
   return (
     <div className="container">
-      <SearchBar></SearchBar>
+      <h1>FInded</h1>
     </div>
   )
 }
