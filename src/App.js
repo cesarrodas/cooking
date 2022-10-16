@@ -9,6 +9,7 @@ function App() {
     <div>
       <Header />
       <Selector />
+      <hr />
       <h1>Yo</h1>
       <Loader />
     </div>

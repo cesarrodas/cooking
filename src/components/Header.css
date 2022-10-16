@@ -3,9 +3,16 @@
   height: 60px;
   background-color: rgb(139, 215, 139);
   display: flex;
+  line-height: 60px;
+}
+
+h1 {
+  margin: 0;
+  color: white;
 }
 
 .icon {
-  height: 50px;
-  width: 50px;
+  height:40px;
+  width: 40px;
+  margin: 10px;
 }
