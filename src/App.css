@@ -1,0 +1,12 @@
+.parent-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+hr {
+  margin-left: 10%;
+  margin-right: 0;
+  margin-top: 0;
+  width: 80%;
+}

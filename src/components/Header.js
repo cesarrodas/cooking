@@ -1,5 +1,6 @@
 import './Header.css';
 import Fork from '../assets/fork2.png';
+import SearchBar from './SearchBar';
 
 const Header = () => {
   return (
@@ -8,7 +9,7 @@ const Header = () => {
         <img className="icon" src={Fork}/>
       </div>
       <h1>Recipe Finder</h1>
-      {/* <input /> */}
+      <SearchBar></SearchBar>
     </div>
   )
 }

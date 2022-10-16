@@ -2,7 +2,7 @@ import './Selector.css';
 
 const Selector = () => {
   return (
-    <div class="page-selector">
+    <div className="page-selector">
       <button>Recipes</button>
       <button>My Recipes</button>
     </div>

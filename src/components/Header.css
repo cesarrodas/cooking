@@ -1,9 +1,10 @@
 .header {
-  width: 100%;
-  height: 60px;
   background-color: rgb(139, 215, 139);
-  display: flex;
   line-height: 60px;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-items: space-between;
 }
 
 h1 {
