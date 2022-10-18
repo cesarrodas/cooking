@@ -3,4 +3,9 @@
   height: 100px;
   background-color: transparent;
   flex-grow: 1;
+  background-color: aquamarine;
+}
+
+.recipe {
+  border: 2px solid black;
 }

@@ -15,6 +15,7 @@ function App() {
 
   const [page, setPage] = useState(PAGES.RECIPE_SEARCHER);
   const [searchQuery, setSearchQuery] = useState('');
+  const [recipes, setRecipes] = useState(null);
   // const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
@@ -24,7 +25,8 @@ function App() {
         await fetch(`https://cesarrodas.net/cloud/recipes?food=${searchQuery}`).then((response) => {
           return response.json();
         }).then((data) => {
-          console.log("fetched", data);
+          console.log("fetched", data.results);
+          setRecipes(data.results);
         });
 
       } catch (error) {
@@ -42,7 +44,7 @@ function App() {
       {/* <Loader /> */}
       {
         page == PAGES.RECIPE_SEARCHER ?
-        <RecipeFinder /> :
+        <RecipeFinder recipes={recipes} /> :
         <></>
       }
     </div>

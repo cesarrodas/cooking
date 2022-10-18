@@ -1,9 +1,15 @@
 import './RecipeFinder.css';
 
-const RecipeFinder = () => {
+const RecipeFinder = ({ recipes }) => {
+
   return (
     <div className="container">
-      <h1>FInded</h1>
+      {recipes.map((recipe) => {
+        return <div className="recipe" key={recipe.id}>
+          <img src={recipe.image}/>
+          {recipe.title}
+        </div>
+      })}
     </div>
   )
 }
