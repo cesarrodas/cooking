@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import './App.css';
 
 import Header from './components/Header';
-// import Loader from './components/Loader';
+import Loader from './components/Loader';
 import Selector from './components/Selector';
 import RecipeFinder from './components/RecipeFinder';
 
@@ -16,20 +16,24 @@ function App() {
   const [page, setPage] = useState(PAGES.RECIPE_SEARCHER);
   const [searchQuery, setSearchQuery] = useState('');
   const [recipes, setRecipes] = useState(null);
+  const [loading, setLoading] = useState(false);
   // const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
     const fetchRecipes = async () => {
       if(!searchQuery) return;
       try {
+        setLoading(true);
         await fetch(`https://cesarrodas.net/cloud/recipes?food=${searchQuery}`).then((response) => {
           return response.json();
         }).then((data) => {
           console.log("fetched", data.results);
+          setLoading(false);
           setRecipes(data.results);
         });
 
       } catch (error) {
+        setLoading(false);
         console.log(error);
       }
     }
@@ -43,7 +47,10 @@ function App() {
       <hr />
       {/* <Loader /> */}
       {
-        page == PAGES.RECIPE_SEARCHER ?
+        loading ? <Loader></Loader> : null
+      }
+      {
+        page == PAGES.RECIPE_SEARCHER && !loading ?
         <RecipeFinder recipes={recipes} /> :
         <></>
       }

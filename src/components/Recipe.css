@@ -13,4 +13,13 @@
 
 .recipe-title {
   padding-left: 10px;
+  margin-bottom: 4px;
+}
+
+.detail-button {
+  border-radius: 10px;
+  float: right;
+  padding: 6px 10px;
+  width: 80px;
+  align-self: flex-end;
 }
