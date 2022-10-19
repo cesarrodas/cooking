@@ -3,7 +3,7 @@
   height: 100%;
   background-color: transparent;
 
-  background-color: aquamarine;
+  background-color: transparent;
   
   margin: 0 auto;
   overflow-y: scroll;
@@ -16,11 +16,6 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin-bottom: 100px;
 }
 
-.recipe {
-  border: 2px solid black;
-  width: 27%;
-  display: flex;
-  flex-direction: column;
-}
