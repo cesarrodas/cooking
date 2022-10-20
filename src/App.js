@@ -5,6 +5,7 @@ import Header from './components/Header';
 import Loader from './components/Loader';
 import Selector from './components/Selector';
 import RecipeFinder from './components/RecipeFinder';
+import RecipeDetail from './components/RecipeDetail';
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
   const [recipes, setRecipes] = useState(null);
   const [loading, setLoading] = useState(false);
   const [selectedRecipe, setSelectedRecipe] = useState(null);
+  const [recipeData, setRecipeData] = useState(null);
   // const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
@@ -29,7 +31,6 @@ function App() {
         await fetch(`https://cesarrodas.net/cloud/recipes?food=${searchQuery}`).then((response) => {
           return response.json();
         }).then((data) => {
-          console.log("fetched", data.results);
           setLoading(false);
           setRecipes(data.results);
         });
@@ -42,6 +43,26 @@ function App() {
     fetchRecipes();
   }, [searchQuery]);
 
+  useEffect(() => {
+    const fetchRecipeData = async () => {
+      if(!selectedRecipe) return;
+      try {
+        setLoading(true);
+        await fetch(`https://cesarrodas.net/cloud/recipeData?recipe=${selectedRecipe}`).then((response) => {
+          return response.json();
+        }).then((data) => {
+          setLoading(false);
+          setRecipeData(data);
+          setPage(PAGES.RECIPE_DETAILS);
+        })
+      } catch (error) {
+        setLoading(false);
+        console.log(error);
+      }
+    }
+    fetchRecipeData();
+  }, [selectedRecipe])
+
   return (
     <div className="parent-container">
       <Header setSearchQuery={setSearchQuery} />
@@ -52,7 +73,11 @@ function App() {
       }
       {
         page == PAGES.RECIPE_SEARCHER && !loading ?
-        <RecipeFinder recipes={recipes} /> : null
+        <RecipeFinder recipes={recipes} setSelectedRecipe={setSelectedRecipe} /> : null
+      }
+      {
+        page == PAGES.RECIPE_DETAILS && !loading ?
+        <RecipeDetail recipeData={recipeData} /> : null
       }
 
     </div>

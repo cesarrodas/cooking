@@ -1,3 +1,16 @@
-.detail-container {
-    background-color: red;
+.selectRecipe {
+  text-align: center;
+}
+  
+.selectRecipeMessage {
+  margin-top: 15%;
+}
+
+.recipeDetail-page {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.recipeDetail-title {
+  color: black;
 }

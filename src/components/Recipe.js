@@ -1,11 +1,11 @@
 import './Recipe.css';
 
-const Recipe = ({recipe}) => {
+const Recipe = ({recipe, setSelectedRecipe}) => {
   return (
-    <div className="recipe" key={recipe.id}>
+    <div className="recipe">
       <img className="recipe-image" src={recipe.image}/>
       <h4 className="recipe-title">{recipe.title}</h4>
-      <button className="detail-button">Details</button>
+      <button onClick={() => { setSelectedRecipe(recipe.id) }} className="detail-button">Details</button>
     </div>
   )
 }

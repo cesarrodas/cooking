@@ -2,7 +2,7 @@ import './RecipeFinder.css';
 
 import Recipe from './Recipe';
 
-const RecipeFinder = ({ recipes }) => {
+const RecipeFinder = ({ recipes, setSelectedRecipe }) => {
 
   return (
     <div className="parent">
@@ -14,7 +14,7 @@ const RecipeFinder = ({ recipes }) => {
       }
       <div className="container">
         {recipes ? recipes.map((recipe) => {
-          return <Recipe recipe={recipe}/> 
+          return <Recipe key={recipe.id} setSelectedRecipe={setSelectedRecipe} recipe={recipe}/> 
         }) : <></>}
       </div>
     </div>
