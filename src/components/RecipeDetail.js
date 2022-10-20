@@ -2,7 +2,7 @@ import './RecipeDetail.css';
 
 const RecipeDetail = () => {
   return (
-    <div>
+    <div className="detail-container">
 
     </div>
   )

@@ -10,13 +10,15 @@ function App() {
 
   const PAGES = {
     RECIPE_SEARCHER: 'RECIPE_SEARCHER',
-    MY_RECIPES: 'MY_RECIPES'
+    MY_RECIPES: 'MY_RECIPES',
+    RECIPE_DETAILS: 'RECIPE_DETAILS'
   }
 
   const [page, setPage] = useState(PAGES.RECIPE_SEARCHER);
   const [searchQuery, setSearchQuery] = useState('');
   const [recipes, setRecipes] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [selectedRecipe, setSelectedRecipe] = useState(null);
   // const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
@@ -43,17 +45,16 @@ function App() {
   return (
     <div className="parent-container">
       <Header setSearchQuery={setSearchQuery} />
-      <Selector />
+      <Selector currentPage={page} setPage={setPage}/>
       <hr />
-      {/* <Loader /> */}
       {
         loading ? <Loader></Loader> : null
       }
       {
         page == PAGES.RECIPE_SEARCHER && !loading ?
-        <RecipeFinder recipes={recipes} /> :
-        <></>
+        <RecipeFinder recipes={recipes} /> : null
       }
+
     </div>
   );
 }

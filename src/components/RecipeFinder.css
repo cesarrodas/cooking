@@ -19,3 +19,19 @@
   margin-bottom: 100px;
 }
 
+.searchPage {
+  text-align: center;
+}
+
+.searchText {
+  margin-top: 15%;
+}
+
+
+.noResultsPage {
+  text-align: center;
+}
+
+.noResultsPageText {
+  margin-top: 15%;
+}
