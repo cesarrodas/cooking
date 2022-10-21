@@ -6,11 +6,28 @@
   margin-top: 15%;
 }
 
+.detail-container {
+  overflow-y: scroll;
+}
+
 .recipeDetail-page {
   width: 80%;
   margin: 0 auto;
+  text-align: center;
 }
 
 .recipeDetail-title {
   color: black;
+  font-size: 50px;
+}
+
+.recipeDetail-img {
+  margin: 10px;
+  margin-top: 50px;
+  border: solid 1px rgb(66, 65, 65);
+}
+
+.recipeDetail-descript {
+  width: 60%;
+  margin: 0 auto;
 }
