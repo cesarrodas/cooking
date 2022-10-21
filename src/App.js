@@ -6,6 +6,7 @@ import Loader from './components/Loader';
 import Selector from './components/Selector';
 import RecipeFinder from './components/RecipeFinder';
 import RecipeDetail from './components/RecipeDetail';
+import useLocalStorage from './hooks/useLocalStorage';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [selectedRecipe, setSelectedRecipe] = useState(null);
   const [recipeData, setRecipeData] = useState(null);
+  const [savedRecipes, setSavedRecipes] = useLocalStorage("savedRecipes", []);
   // const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {

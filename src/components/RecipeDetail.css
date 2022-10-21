@@ -30,4 +30,10 @@
 .recipeDetail-descript {
   width: 60%;
   margin: 0 auto;
+  margin-bottom: 60px;
+}
+
+.recipeDetail-footer {
+  display: flex;
+  justify-content: flex-end;
 }

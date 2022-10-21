@@ -5,7 +5,7 @@ const RecipeDetail = ({ recipeData }) => {
 
   const recipe = () => {
 
-    let steps = recipeData.analyzedInstructions[0].steps.map((val) => <div><b>Step {val.number}</b><p>{val.step}</p></div>)
+    let steps = recipeData.analyzedInstructions[0]?.steps.map((val) => <div><b>Step {val.number}</b><p>{val.step}</p></div>)
 
     const options = {
       replace: domNode => {
@@ -28,6 +28,9 @@ const RecipeDetail = ({ recipeData }) => {
           {
             steps
           }
+          <div className='recipeDetail-footer'>
+            <button className='recipeDetail-saveButton'>Save Recipe</button>
+          </div>
         </div>
         {/* <div className="recipeDetail-descript">  {parse(recipeData.instructions)}</div> */}
       </div>
