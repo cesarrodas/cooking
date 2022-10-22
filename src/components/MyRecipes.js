@@ -2,7 +2,9 @@ import './MyRecipes.css';
 
 const MyRecipes = ({ savedRecipes }) => {
   return (
-    <div>{JSON.stringify(savedRecipes)}</div>
+    <div className='parent'>
+      <div className='container'>{JSON.stringify(savedRecipes)}</div>
+    </div>
   )
 }
 
