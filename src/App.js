@@ -7,6 +7,7 @@ import Selector from './components/Selector';
 import RecipeFinder from './components/RecipeFinder';
 import RecipeDetail from './components/RecipeDetail';
 import useLocalStorage from './hooks/useLocalStorage';
+import MyRecipes from './components/MyRecipes';
 
 function App() {
 
@@ -78,8 +79,12 @@ function App() {
         <RecipeFinder recipes={recipes} setSelectedRecipe={setSelectedRecipe} /> : null
       }
       {
+        page == PAGES.MY_RECIPES && !loading ?
+        <MyRecipes savedRecipes={savedRecipes} /> : null
+      }
+      {
         page == PAGES.RECIPE_DETAILS && !loading ?
-        <RecipeDetail recipeData={recipeData} /> : null
+        <RecipeDetail recipeData={recipeData} setSavedRecipes={setSavedRecipes} savedRecipes={savedRecipes} /> : null
       }
 
     </div>

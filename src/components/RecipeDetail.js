@@ -1,7 +1,7 @@
 import './RecipeDetail.css';
 import parse, { attributesToProps } from 'html-react-parser';
 
-const RecipeDetail = ({ recipeData }) => {
+const RecipeDetail = ({ recipeData, savedRecipes, setSavedRecipes }) => {
 
   const recipe = () => {
 
@@ -16,6 +16,15 @@ const RecipeDetail = ({ recipeData }) => {
       }
     };
 
+    const saveRecipe = () => {
+      let reps = [...savedRecipes, {
+        title: recipeData.title,
+        image: recipeData.image,
+        id: recipeData.id
+      }]
+      setSavedRecipes(reps);
+    }
+
     return (
       <div className="recipeDetail-page">
         <h1 className="recipeDetail-title">{recipeData.title}</h1>
@@ -29,7 +38,7 @@ const RecipeDetail = ({ recipeData }) => {
             steps
           }
           <div className='recipeDetail-footer'>
-            <button className='recipeDetail-saveButton'>Save Recipe</button>
+            <button onClick={saveRecipe} className='recipeDetail-saveButton'>Save Recipe</button>
           </div>
         </div>
         {/* <div className="recipeDetail-descript">  {parse(recipeData.instructions)}</div> */}

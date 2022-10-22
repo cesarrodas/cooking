@@ -37,3 +37,7 @@
   display: flex;
   justify-content: flex-end;
 }
+
+.recipeDetail-saveButton {
+  margin-top: 40px;
+}
