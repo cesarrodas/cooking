@@ -16,10 +16,24 @@
   margin-bottom: 4px;
 }
 
+.buttons-container {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.remove-button {
+  border-radius: 10px;
+  padding: 6px 10px;
+  background-color: rgb(215, 131, 131);
+  width: 80px;
+  justify-self: flex-start;
+}
+
 .detail-button {
   border-radius: 10px;
-  float: right;
   padding: 6px 10px;
   width: 80px;
-  align-self: flex-end;
+  margin-left: auto;
+  justify-self: flex-end;
 }

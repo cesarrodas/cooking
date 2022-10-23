@@ -80,7 +80,7 @@ function App() {
       }
       {
         page == PAGES.MY_RECIPES && !loading ?
-        <MyRecipes savedRecipes={savedRecipes} page={page} /> : null
+        <MyRecipes savedRecipes={savedRecipes} setSavedRecipes={setSavedRecipes} setSelectedRecipe={setSelectedRecipe} page={page} /> : null
       }
       {
         page == PAGES.RECIPE_DETAILS && !loading ?
