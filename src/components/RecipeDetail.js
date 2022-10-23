@@ -17,6 +17,11 @@ const RecipeDetail = ({ recipeData, savedRecipes, setSavedRecipes }) => {
     };
 
     const saveRecipe = () => {
+      for ( let recipe of savedRecipes) {
+        if(recipe.id == recipeData.id){
+          return;
+        }
+      }
       let reps = [...savedRecipes, {
         title: recipeData.title,
         image: recipeData.image,
