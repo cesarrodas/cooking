@@ -35,3 +35,7 @@
 .noResultsPageText {
   margin-top: 15%;
 }
+
+
+@media screen and (min-width: 700px) {
+}
