@@ -2,7 +2,7 @@
   flex-grow: 1;
   display: flex;
   justify-content: center;
-  align-items: center;
+  margin: 20px;
 }
 
 .centerer {
@@ -31,4 +31,11 @@
 
 .searchBar {
   height: 26px;
+}
+
+@media screen and (min-width: 700px) {
+  .searchBarContainer {
+    justify-content: center;
+    align-items: center;
+  }
 }

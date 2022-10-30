@@ -5,10 +5,12 @@ import SearchBar from './SearchBar';
 const Header = ({ setSearchQuery }) => {
   return (
     <div className='header'>
-      <div>
-        <img className="icon" src={Fork}/>
+      <div className="header-logo">
+        <div>
+          <img className="icon" src={Fork}/>
+        </div>
+        <h1>Recipe Finder</h1>
       </div>
-      <h1>Recipe Finder</h1>
       <SearchBar setSearchQuery={setSearchQuery} />
     </div>
   )

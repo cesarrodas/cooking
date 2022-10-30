@@ -1,10 +1,20 @@
 .header {
   background-color: rgb(139, 215, 139);
-  line-height: 60px;
-  height: 60px;
   display: flex;
-  flex-direction: row;
-  justify-items: space-between;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header-logo {
+  display: flex;
+  width: fit-content;
+  align-self: center;
+  line-height: 60px;
+}
+
+.header-logo > div {
+  margin: 0;
+  height: 60px;
 }
 
 h1 {
@@ -16,4 +26,16 @@ h1 {
   height:40px;
   width: 40px;
   margin: 10px;
+}
+
+@media screen and (min-width: 700px) {
+  .header {
+    flex-direction: row;
+    height: 60px;
+    justify-items: space-between;
+  }
+
+  .header-logo {
+    justify-self: auto;
+  }
 }
