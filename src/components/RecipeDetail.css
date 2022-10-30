@@ -11,24 +11,25 @@
 }
 
 .recipeDetail-page {
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   text-align: center;
 }
 
 .recipeDetail-title {
   color: black;
-  font-size: 50px;
+  font-size: 2rem;
 }
 
 .recipeDetail-img {
   margin: 10px;
   margin-top: 50px;
+  width: 90%;
   border: solid 1px rgb(66, 65, 65);
 }
 
 .recipeDetail-descript {
-  width: 60%;
+  width: 90%;
   margin: 0 auto;
   margin-bottom: 60px;
 }
@@ -40,4 +41,30 @@
 
 .recipeDetail-saveButton {
   margin-top: 40px;
+}
+
+@media screen and (min-width: 700px) {
+  .recipeDetail-page {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .recipeDetail-title {
+    color: black;
+    font-size: 3rem;
+  }
+
+  .recipeDetail-img {
+    margin: 10px;
+    width: auto;
+    margin-top: 50px;
+    border: solid 1px rgb(66, 65, 65);
+  }
+
+  .recipeDetail-descript {
+    width: 60%;
+    margin: 0 auto;
+    margin-bottom: 60px;
+  }
 }
