@@ -32,12 +32,12 @@ const RecipeDetail = ({ recipeData, savedRecipes, setSavedRecipes }) => {
 
     const saveText = () => {
       for ( let recipe of savedRecipes) {
+        console.log("RECIPE ID", recipe.id, "SELECTED RECIPE ID", recipeData.id);
         if(recipe.id === recipeData.id){
           return <button className='recipeDetail-saveButton'>Saved!</button>
-        } else {
-          return <button onClick={saveRecipe} className='recipeDetail-saveButton'>Save Recipe</button>
         }
       }
+      return <button onClick={saveRecipe} className='recipeDetail-saveButton'>Save Recipe</button>
     }
 
     return (
