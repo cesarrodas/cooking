@@ -18,7 +18,7 @@ const RecipeDetail = ({ recipeData, savedRecipes, setSavedRecipes }) => {
 
     const saveRecipe = () => {
       for ( let recipe of savedRecipes) {
-        if(recipe.id == recipeData.id){
+        if(recipe.id === recipeData.id){
           return;
         }
       }
@@ -28,6 +28,16 @@ const RecipeDetail = ({ recipeData, savedRecipes, setSavedRecipes }) => {
         id: recipeData.id
       }]
       setSavedRecipes(reps);
+    }
+
+    const saveText = () => {
+      for ( let recipe of savedRecipes) {
+        if(recipe.id === recipeData.id){
+          return <button className='recipeDetail-saveButton'>Saved!</button>
+        } else {
+          return <button onClick={saveRecipe} className='recipeDetail-saveButton'>Save Recipe</button>
+        }
+      }
     }
 
     return (
@@ -43,7 +53,7 @@ const RecipeDetail = ({ recipeData, savedRecipes, setSavedRecipes }) => {
             steps
           }
           <div className='recipeDetail-footer'>
-            <button onClick={saveRecipe} className='recipeDetail-saveButton'>Save Recipe</button>
+            { saveText() }
           </div>
         </div>
         {/* <div className="recipeDetail-descript">  {parse(recipeData.instructions)}</div> */}
