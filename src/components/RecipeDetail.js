@@ -32,7 +32,6 @@ const RecipeDetail = ({ recipeData, savedRecipes, setSavedRecipes }) => {
 
     const saveText = () => {
       for ( let recipe of savedRecipes) {
-        console.log("RECIPE ID", recipe.id, "SELECTED RECIPE ID", recipeData.id);
         if(recipe.id === recipeData.id){
           return <button className='recipeDetail-saveButton'>Saved!</button>
         }
@@ -48,7 +47,6 @@ const RecipeDetail = ({ recipeData, savedRecipes, setSavedRecipes }) => {
           <h2>Summary</h2>
           <div>{ parse(recipeData.summary, options)}</div>
           <h2>Instructions</h2>
-          { console.log(steps) }
           {
             steps
           }
@@ -67,9 +65,6 @@ const RecipeDetail = ({ recipeData, savedRecipes, setSavedRecipes }) => {
         recipeData == null ? 
         <div className="selectRecipe"><div className="selectRecipeMessage">Find and select a recipe.</div></div> 
         : recipe()
-      }
-      {
-        recipeData ? console.log(recipeData) : null
       }
     </div>
   )
